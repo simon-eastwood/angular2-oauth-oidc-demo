@@ -17,15 +17,14 @@ export class FlightService {
 
      public flights: Array<Flight> = [];
 
-     find(from: string, to: string): void {
-         let url = this.baseUrl + "/api/flight";
+     find(to: string): void {
+         let url =  "http://ops.epo.org/3.1/rest-services/published-data/search";
          let headers = new Headers();
          headers.set('Accept', 'application/json');
          headers.set('Authorization', 'Bearer ' + this.oauthService.getAccessToken());
 
          let search = new URLSearchParams();
-         search.set('from', from);
-         search.set('to', to);
+         search.set('q', to);
 
          this
              .http

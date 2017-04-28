@@ -73,7 +73,7 @@ export class FlightSearchReactiveComponent {
         var value = this.filter.value;
 
         this.flightService
-            .find(value.from, value.to);
+            .find(value.to);
 
 
 

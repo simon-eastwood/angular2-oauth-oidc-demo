@@ -10,7 +10,7 @@ import {FlightService} from "../services/flight.service";
 })
 export class FlightSearchComponent {
 
-    public from: string = "Graz";
+
     public to: string = "";
     public selectedFlight: Flight;
 
@@ -27,9 +27,9 @@ export class FlightSearchComponent {
     }
 
     public search(): void {
-
+console.log ('search called with ' + this.to);
         this.flightService
-            .find(this.from, this.to);
+            .find(this.to);
 
             // .map(function(resp) { return resp.json() })
 
