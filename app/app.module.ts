@@ -7,7 +7,9 @@ import {BASE_URL} from "./app.tokens";
 import {SharedModule} from "./shared/shared.module";
 import {AppRouterModule} from "./app.routes";
 import {HomeComponent} from "./home/home.component";
+import {CallApiComponent} from "./call-api/call-api.component";
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { CallApiService } from './call-api/call-api.service';
 
 @NgModule({
     imports: [
@@ -21,10 +23,12 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     ],
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        CallApiComponent
         
     ],
     providers: [
+        CallApiService,
         { provide: BASE_URL, useValue: "https://hpg-keycloak.northeurope.cloudapp.azure.com:8443"}
     ],
     bootstrap: [

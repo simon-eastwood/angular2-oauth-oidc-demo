@@ -1,4 +1,3 @@
-import { FlightHistoryComponent } from './flight-history/flight-history.component';
 import { Component } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 
