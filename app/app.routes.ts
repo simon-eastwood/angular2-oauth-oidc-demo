@@ -1,6 +1,6 @@
 import {Routes, RouterModule, PreloadAllModules} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
-import {FlightHistoryComponent} from "./flight-history/flight-history.component";
+
 import {CustomPreloadingStrategy} from "./shared/preload/custom-preloading.strategy";
 
 let APP_ROUTES: Routes = [
@@ -17,11 +17,7 @@ let APP_ROUTES: Routes = [
         path: 'flight-booking',
         loadChildren: './flight-booking/flight-booking.module#FlightBookingModule'
     },
-    {
-        path: 'history',
-        component: FlightHistoryComponent,
-        outlet: 'aux'
-    },
+   
     {
         path: '**',
         redirectTo: 'home'
