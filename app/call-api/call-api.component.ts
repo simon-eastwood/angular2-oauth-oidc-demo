@@ -19,7 +19,10 @@ export class CallApiComponent implements OnInit {
     public invoke(): void {
 console.log ('invoke called with ' + this.to);
         this.callApiService
-            .find(this.to);
+            .find(this.to).subscribe((resp:string) => {
+            this.response = resp;
+            console.log ("sub called");
+        });
 
            //.map(function(resp) { return resp.json() });
 
